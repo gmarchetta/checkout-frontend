@@ -1,6 +1,10 @@
 This project is the frontend portion of a simple checkout. It was put together quickly to excercise the APIs built as part of https://github.com/gmarchetta/spring-boot-checkout, and it is meant to be used for local development only at this point.
 
-It is a prerequisite to start spring-boot-checkout for this project to work. 
+It is a prerequisite to start spring-boot-checkout for this project to work.
+
+Screenshot:
+
+![Checkout](https://user-images.githubusercontent.com/10438941/86881128-25e35580-c0c4-11ea-8a62-3fe65b2db6d8.png)
 
 ## Pending work
 This project could have been configured using Docker, and docker compose could have been setup for starting both backend and frontend on one go.
