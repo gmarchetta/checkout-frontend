@@ -2,6 +2,9 @@ This project is the frontend portion of a simple checkout. It was put together q
 
 It is a prerequisite to start spring-boot-checkout for this project to work. 
 
+## Pending work
+This project could have been configured using Docker, and docker compose could have been setup for starting both backend and frontend on one go.
+
 ## About this project
 This is my first attempt at building a project using React. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Before running the project, you need to run:
 
