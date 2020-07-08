@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import axios from 'axios';
 
@@ -7,14 +8,14 @@ class Basket extends React.Component {
   render() {
     return (
       <div className="basket">
-        <h1>Your basket contents:</h1>
-        <table>
+        <h3>Your basket contents:</h3>
+        <table className="table">
           <tbody>
             <tr>
-              <td width="150">Product name</td>
-              <td width="150">Product type</td>
-              <td width="150">Price</td>
-              <td width="150">Quantity</td>
+              <th width="150">Product name</th>
+              <th width="150">Product type</th>
+              <th width="150">Price</th>
+              <th width="150">Quantity</th>
             </tr>
             {this.props.basket.items.map((item, index) => {
               return <BasketItem key={index} item={item} />
@@ -22,7 +23,7 @@ class Basket extends React.Component {
           </tbody>
         </table>
 
-        <h3>Total amount after discounts: {this.props.basket.totalAmount}</h3>
+        <h4>Total amount after discounts: {this.props.basket.totalAmount}</h4>
       </div>
     );
   }
@@ -45,32 +46,33 @@ class ProductAppender extends React.Component {
   render() {
     return (
       <div>
+        <br/>
         <h3>Add products here!</h3>
         <table>
           <tbody>
             <tr>
-              <td>
+              <td width="250">
                 Product
               </td>
-              <td>
+              <td width="250">
                 Quantity
               </td>
-              <td>
+              <td width="250">
               </td>
             </tr>
             <tr>
               <td>
-                <select ref={this.props.productRef} id='product' name='product'>
+                <select ref={this.props.productRef} id='product' name='product' className="custom-select w-90">
                   <option value="1">Lana Pen</option>
                   <option value="2">Lana T-Shirt</option>
                   <option value="3">Lana Coffee Mug</option>
                 </select>
               </td>
               <td>
-                <input ref={this.props.quantityRef}/>
+                <input ref={this.props.quantityRef} className="form-control w-90 "/>
               </td>
               <td>
-                <button className="add-product" onClick={() => this.props.onAddProduct(1, 2)}>
+                <button className="btn btn-primary" onClick={() => this.props.onAddProduct(1, 2)}>
                   Add to cart
                 </button>
               </td>
@@ -126,7 +128,7 @@ class Checkout extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="ml-4 mt-4">
         <Basket basket={this.state}/>
         <ProductAppender
           basketId={this.state.id}
